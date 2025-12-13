@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title%}Todos Index{%endblock%}
+{%block content%}
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Tasks</th>
+        <th>Completed</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    <tbody>
+        {%for task in todo%}
+            <tr>
+                <td>{{task.tid}}</td>
+                <td>{{task.tasks}}</td>
+                <td>{{task.completed}}</td>
+                <td>
+                    <a href="{{url_for('todos.update',tid=task.tid)}}">Update</a>
+                </td>
+                <td>
+                    <a href="{{url_for('todos.delete',tid=task.tid)}}">Delete</a>
+                </td> 
+            </tr>
+        {%endfor%}
+        
+    </tbody>
+</table>
+<a href="{{url_for('todos.add_task')}}">Add Task</a>
+<a href="{{url_for('auth.logout')}}">Logout</a>
+{%endblock%}

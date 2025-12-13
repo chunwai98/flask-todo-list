@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title%}Login Page{%endblock%}
+{%block content%}
+<!--form action="{{url_for('auth.login')}}" methos="post">
+    <p>User Name     
+        <input type="text" name="name" placeholder="User Name" required="required">
+    </p><br>
+    <p>User Password
+        <input type="password" name="password" placeholder="User Password" required="required">
+    </p>
+    <input type="submit" value="Sudmit">
+</form-->
+
+<form action="{{url_for('auth.login')}}" method="POST">
+    {{form.hidden_tag()}}
+    {{form.name.label}} {{form.name}} <br>
+    {{form.password.label}} {{form.password}} <br><br>
+    {{form.submit}}
+</form>
+
+{%endblock%}
