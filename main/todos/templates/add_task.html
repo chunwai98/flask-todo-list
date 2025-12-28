@@ -2,9 +2,11 @@
 {% block title%}Add Task{%endblock%}
 {%block content%}
 <form action="{{url_for('todos.add_task')}}" method="post">
-    {{form.task.label}} {{form.task}} <br>
-    {{form.completed.label}} {{form.completed}} <br>
-    {{form.submit}}
+    {{form.task.label(class="form-label")}} <br>
+    {{form.task (class="form-control")}} <br>
+    {{form.completed.label (class="form-label")}} <br>
+    {{form.completed (class="btn btn-success")}} <br>
+    {{form.submit (class="btn btn-success")}}
 </form>
 
 {%endblock%}

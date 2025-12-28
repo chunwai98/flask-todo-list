@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block title%}{%endblock%}
 {%block content%}
-<a href="{{url_for('auth.login')}}">Login</a><br>
-<a href="{{url_for('auth.signup')}}">Sign Up</a>
+
+<a class="link-opacity-25-hover" href="{{url_for('auth.login')}}">Login</a><br>
+<a class="link-opacity-25-hover" href="{{url_for('auth.signup')}}">Sign Up</a>
 
 {%endblock%}

@@ -10,12 +10,16 @@
     </p>
     <input type="submit" value="Sudmit">
 </form-->
-
-<form action="{{url_for('auth.login')}}" method="POST">
-    {{form.hidden_tag()}}
-    {{form.name.label}} {{form.name}} <br>
-    {{form.password.label}} {{form.password}} <br><br>
-    {{form.submit}}
-</form>
+<div class="container-sm">
+    <form action="{{url_for('auth.login')}}" method="POST">
+        {{form.hidden_tag()}}
+        {{form.name.label(class="form-label")}} <br>
+        {{form.name (class="form-control")}} <br>
+        {{form.password.label(class="form-label")}} <br>
+        {{form.password (class="form-control")}} <br>
+        {{form.submit (class="btn btn-success")}} <br>
+    </form>
+</div>
+    
 
 {%endblock%}

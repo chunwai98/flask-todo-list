@@ -1,14 +1,17 @@
 from flask import Flask,Blueprint
 from flask_migrate import Migrate
+from flask_bootstrap import Bootstrap4
 from main.extensions import db,bcrypt,login_manager
 from main.config import Config
 from main.main.route import main
 from main.auth.route import auth
 from main.todos.route import todos
 
+
 def create_app():
     #Configuration
     app=Flask(__name__,template_folder="templates")
+    bootstrap = Bootstrap4(app)
     app.config.from_object(Config)
 
     #Init
@@ -26,3 +29,4 @@ def create_app():
         db.create_all()
 
     return app
+
